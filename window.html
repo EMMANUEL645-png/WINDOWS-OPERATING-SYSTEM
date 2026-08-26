@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emmanuel Asekhame - Web Developer Portfolio Desktop Environment (HTML5/CSS3 Only).">
+  <title>Desktop - Asekhame Emmanuel Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       PURE CSS STATE TOGGLES (RADIO & CHECKBOX HACKS - ZERO JAVASCRIPT)
+       ========================================================================== -->
+  <!-- Theme Controls -->
+  <input type="radio" name="theme" id="theme-dark" class="css-toggle" checked hidden>
+  <input type="radio" name="theme" id="theme-light" class="css-toggle" hidden>
+
+  <!-- Wallpaper Controls -->
+  <input type="radio" name="wallpaper" id="wp-default" class="css-toggle" checked hidden>
+  <input type="radio" name="wallpaper" id="wp-neon" class="css-toggle" hidden>
+  <input type="radio" name="wallpaper" id="wp-nature" class="css-toggle" hidden>
+
+  <!-- Menu Toggles -->
+  <input type="checkbox" id="start-toggle" class="css-toggle" hidden>
+  <input type="checkbox" id="context-toggle" class="css-toggle" hidden>
+
+  <!-- ==========================================================================
+       DESKTOP SHELL CONTAINER
+       ========================================================================== -->
+  <div class="desktop-container" id="desktop">
+
+    <!-- Top-Right Desktop Options / Context Menu Widget -->
+    <div class="desktop-options-widget">
+      <label for="context-toggle" class="context-trigger-btn" title="Desktop Options">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="1"></circle>
+          <circle cx="12" cy="5" r="1"></circle>
+          <circle cx="12" cy="19" r="1"></circle>
+        </svg>
+        <span>Desktop Options</span>
+      </label>
+    </div>
+
+    <!-- Desktop Options Context Menu Dropdown -->
+    <nav class="context-menu" aria-label="Desktop Context Menu">
+      <a href="#desktop" class="context-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+        <span>Refresh Desktop</span>
+      </a>
+      <a href="#personalize" class="context-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a7 7 0 1 0 7 7"></path></svg>
+        <span>Personalize Theme</span>
+      </a>
+      <a href="#personalize" class="context-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        <span>Display Settings</span>
+      </a>
+      <div class="context-divider"></div>
+      <a href="#about" class="context-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span>About This PC</span>
+      </a>
+    </nav>
+
+    <!-- ==========================================================================
+         DESKTOP SHORTCUT ICONS GRID
+         ========================================================================== -->
+    <main class="desktop-grid">
+      
+      <!-- File Explorer Shortcut -->
+      <a href="#explorer" class="desktop-icon-link" id="shortcut-explorer">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/>
+          <path d="M40 16H8V36H40V16Z" fill="#FFCA28"/>
+        </svg>
+        <span class="desktop-icon-label">File Explorer</span>
+      </a>
+
+      <!-- About Me Shortcut -->
+      <a href="#about" class="desktop-icon-link" id="shortcut-about">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" fill="#0078D4"/>
+          <circle cx="24" cy="18" r="8" fill="#FFFFFF"/>
+          <path d="M12 36C12 29.37 17.37 24 24 24C30.63 24 36 29.37 36 36" fill="#FFFFFF"/>
+        </svg>
+        <span class="desktop-icon-label">About Me</span>
+      </a>
+
+      <!-- Projects Shortcut -->
+      <a href="#projects" class="desktop-icon-link" id="shortcut-projects">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="4" fill="#2B579A"/>
+          <path d="M14 20L22 24L14 28" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+          <line x1="24" y1="28" x2="32" y2="28" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="desktop-icon-label">Projects</span>
+      </a>
+
+      <!-- Skills Shortcut -->
+      <a href="#skills" class="desktop-icon-link" id="shortcut-skills">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" fill="#107C41"/>
+          <path d="M16 24L22 30L32 18" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="desktop-icon-label">Skills</span>
+      </a>
+
+      <!-- Resume Shortcut -->
+      <a href="#resume" class="desktop-icon-link" id="shortcut-resume">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 6C9.79 6 8 7.79 8 10V38C8 40.21 9.79 42 12 42H36C38.21 42 40 40.21 40 38V18L28 6H12Z" fill="#D83B01"/>
+          <path d="M28 6V18H40" fill="#F8682C"/>
+          <line x1="14" y1="26" x2="30" y2="26" stroke="#FFFFFF" stroke-width="2"/>
+          <line x1="14" y1="32" x2="34" y2="32" stroke="#FFFFFF" stroke-width="2"/>
+        </svg>
+        <span class="desktop-icon-label">Resume</span>
+      </a>
+
+      <!-- Contact Shortcut -->
+      <a href="#contact" class="desktop-icon-link" id="shortcut-contact">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="4" fill="#008272"/>
+          <path d="M8 12L24 26L40 12" stroke="#FFFFFF" stroke-width="3"/>
+        </svg>
+        <span class="desktop-icon-label">Contact</span>
+      </a>
+
+      <!-- Personalize Shortcut -->
+      <a href="#personalize" class="desktop-icon-link" id="shortcut-personalize">
+        <svg class="desktop-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" fill="#881798"/>
+          <circle cx="18" cy="18" r="4" fill="#FFFFFF"/>
+          <circle cx="30" cy="18" r="4" fill="#FFFFFF"/>
+          <circle cx="24" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
+        <span class="desktop-icon-label">Personalize</span>
+      </a>
+
+    </main>
+
+    <!-- ==========================================================================
+         START MENU (CSS CHECKBOX POPUP)
+         ========================================================================== -->
+    <div class="start-menu" id="start-menu-panel">
+      
+      <!-- Visual Search Input -->
+      <div class="start-header">
+        <div class="start-search-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Type here to search applications or portfolio sections...</span>
+        </div>
+      </div>
+
+      <!-- Pinned Apps Section -->
+      <div class="start-body">
+        <div class="start-section-title">Pinned Applications</div>
+        <div class="start-apps-grid">
+          
+          <a href="#about" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#0078D4"/><circle cx="24" cy="18" r="8" fill="#FFF"/><path d="M12 36C12 29.37 17.37 24 24 24C30.63 24 36 29.37 36 36" fill="#FFF"/></svg>
+            <span class="start-app-label">About Me</span>
+          </a>
+
+          <a href="#projects" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4" fill="#2B579A"/><path d="M14 20L22 24L14 28" stroke="#FFF" stroke-width="3"/><line x1="24" y1="28" x2="32" y2="28" stroke="#FFF" stroke-width="3"/></svg>
+            <span class="start-app-label">Projects</span>
+          </a>
+
+          <a href="#skills" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#107C41"/><path d="M16 24L22 30L32 18" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="start-app-label">Skills</span>
+          </a>
+
+          <a href="#resume" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><path d="M12 6C9.79 6 8 7.79 8 10V38C8 40.21 9.79 42 12 42H36C38.21 42 40 40.21 40 38V18L28 6H12Z" fill="#D83B01"/><path d="M28 6V18H40" fill="#F8682C"/></svg>
+            <span class="start-app-label">Resume</span>
+          </a>
+
+          <a href="#contact" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4" fill="#008272"/><path d="M8 12L24 26L40 12" stroke="#FFF" stroke-width="3"/></svg>
+            <span class="start-app-label">Contact</span>
+          </a>
+
+          <a href="#explorer" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+            <span class="start-app-label">Explorer</span>
+          </a>
+
+          <a href="#personalize" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#881798"/><circle cx="18" cy="18" r="4" fill="#FFF"/><circle cx="30" cy="18" r="4" fill="#FFF"/><circle cx="24" cy="30" r="4" fill="#FFF"/></svg>
+            <span class="start-app-label">Themes</span>
+          </a>
+
+          <a href="index.html" class="start-app-item">
+            <svg class="start-app-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#E81123"/><path d="M18 18L30 30M30 18L18 30" stroke="#FFF" stroke-width="4" stroke-linecap="round"/></svg>
+            <span class="start-app-label">Lock Screen</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Start Menu Footer -->
+      <div class="start-footer">
+        <div class="user-profile-widget">
+          <svg class="user-avatar-sm" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="#106ebe"/>
+            <circle cx="50" cy="38" r="18" fill="#FFF"/>
+            <path d="M 22 82 C 22 62, 35 55, 50 55 C 65 55, 78 62, 78 82 Z" fill="#FFF"/>
+          </svg>
+          <div class="user-info-text">
+            <span class="user-name-str">Asekhame Emmanuel</span>
+            <span class="user-role-str">Web Developer</span>
+          </div>
+        </div>
+
+        <a href="index.html" class="power-btn" title="Lock / Sign Out">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+            <line x1="12" y1="2" x2="12" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ==========================================================================
+         FIXED TASKBAR
+         ========================================================================== -->
+    <footer class="taskbar">
+      
+      <div class="taskbar-left">
+        <!-- Start Button -->
+        <label for="start-toggle" class="start-btn" title="Start Menu">
+          <svg class="start-icon-svg" viewBox="0 0 24 24" fill="none">
+            <path d="M3 3H11V11H3V3Z" fill="#0078D4"/>
+            <path d="M13 3H21V11H13V3Z" fill="#0078D4"/>
+            <path d="M3 13H11V21H3V13Z" fill="#0078D4"/>
+            <path d="M13 13H21V21H13V13Z" fill="#0078D4"/>
+          </svg>
+          <span>Start</span>
+        </label>
+
+        <!-- Search Bar -->
+        <div class="taskbar-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Type here to search</span>
+        </div>
+      </div>
+
+      <!-- Pinned Taskbar App Icons -->
+      <div class="taskbar-center">
+        <a href="#explorer" class="taskbar-item" title="File Explorer">
+          <svg class="taskbar-item-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+        </a>
+        <a href="#about" class="taskbar-item" title="About Me">
+          <svg class="taskbar-item-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#0078D4"/><circle cx="24" cy="18" r="8" fill="#FFF"/><path d="M12 36C12 29.37 17.37 24 24 24C30.63 24 36 29.37 36 36" fill="#FFF"/></svg>
+        </a>
+        <a href="#projects" class="taskbar-item" title="Projects">
+          <svg class="taskbar-item-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4" fill="#2B579A"/><path d="M14 20L22 24L14 28" stroke="#FFF" stroke-width="3"/><line x1="24" y1="28" x2="32" y2="28" stroke="#FFF" stroke-width="3"/></svg>
+        </a>
+        <a href="#skills" class="taskbar-item" title="Skills">
+          <svg class="taskbar-item-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#107C41"/><path d="M16 24L22 30L32 18" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#resume" class="taskbar-item" title="Resume">
+          <svg class="taskbar-item-icon" viewBox="0 0 48 48"><path d="M12 6C9.79 6 8 7.79 8 10V38C8 40.21 9.79 42 12 42H36C38.21 42 40 40.21 40 38V18L28 6H12Z" fill="#D83B01"/><path d="M28 6V18H40" fill="#F8682C"/></svg>
+        </a>
+        <a href="#contact" class="taskbar-item" title="Contact">
+          <svg class="taskbar-item-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4" fill="#008272"/><path d="M8 12L24 26L40 12" stroke="#FFF" stroke-width="3"/></svg>
+        </a>
+      </div>
+
+      <!-- System Tray (Wifi, Volume, Battery, Clock) -->
+      <div class="taskbar-right">
+        <div class="system-tray">
+          <svg class="tray-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+          <svg class="tray-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg class="tray-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect><line x1="23" y1="11" x2="23" y2="13"></line></svg>
+          
+          <div class="tray-clock">
+            <span>10:45 AM</span>
+            <span>8/14/2026</span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <!-- ==========================================================================
+         WINDOW 1: ABOUT ME (`#about`)
+         ========================================================================== -->
+    <section class="window" id="about" aria-label="About Me Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#0078D4"/><circle cx="24" cy="18" r="8" fill="#FFF"/><path d="M12 36C12 29.37 17.37 24 24 24C30.63 24 36 29.37 36 36" fill="#FFF"/></svg>
+          <span class="titlebar-text">About Me - Asekhame Emmanuel</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#about" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body">
+        
+        <div class="about-hero">
+          <!-- REPLACE: real avatar photo here -->
+          <svg class="about-avatar-lg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="#106ebe"/>
+            <circle cx="50" cy="38" r="18" fill="#FFF"/>
+            <path d="M 22 82 C 22 62, 35 55, 50 55 C 65 55, 78 62, 78 82 Z" fill="#FFF"/>
+          </svg>
+
+          <div>
+            <!-- REPLACE: your name & heading -->
+            <h2 class="about-intro-heading">Asekhame Emmanuel</h2>
+            <span class="about-role-badge">Frontend & Web Developer</span>
+            <!-- REPLACE: short intro bio -->
+            <p class="about-text">
+              Passionate Web Developer crafting accessible, performant, and visually captivating web applications. Specialized in semantic HTML5, advanced CSS3 architecture, responsive UI layout engineering, and modern web standards.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Bio & Goals Card -->
+          <div class="info-card">
+            <h3 class="card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span>Biography & Career Goals</span>
+            </h3>
+            <!-- REPLACE: detailed bio content -->
+            <p class="about-text" style="margin-bottom: 12px;">
+              Driven by clean code standards and fluid user experiences. I focus on constructing resilient web products with high aesthetic value and efficient component architecture.
+            </p>
+            <p class="about-text">
+              <strong>Location:</strong> Lagos, Nigeria (Available for Remote Worldwide)<br>
+              <strong>Status:</strong> Open for Web Development & UI Engineering roles.
+            </p>
+          </div>
+
+          <!-- Education Card -->
+          <div class="info-card">
+            <h3 class="card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <span>Education & Certifications</span>
+            </h3>
+            <!-- REPLACE: real education history -->
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <div class="timeline-title">B.Sc. Computer Science / Web Engineering</div>
+                <div class="timeline-sub">University Degree • Expected 2028</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-title">Certified Web Developer</div>
+                <div class="timeline-sub">Frontend Standards & Performance Certification</div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         WINDOW 2: PROJECTS (`#projects`)
+         ========================================================================== -->
+    <section class="window" id="projects" aria-label="Projects Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4" fill="#2B579A"/><path d="M14 20L22 24L14 28" stroke="#FFF" stroke-width="3"/><line x1="24" y1="28" x2="32" y2="28" stroke="#FFF" stroke-width="3"/></svg>
+          <span class="titlebar-text">Projects - File Explorer View</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#projects" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body">
+        
+        <div class="projects-header-toolbar">
+          <div class="explorer-breadcrumbs">
+            <span>This PC</span> &gt; <span>Portfolio</span> &gt; <strong>Projects</strong>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">6 items available</span>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-img-box">
+              <!-- REPLACE: project 1 image thumbnail -->
+              <!-- <svg width="100%" height="100%" viewBox="0 0 400 200" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="rgba(0,120,212,0.2)" stroke="#0078D4" stroke-width="2"/>
+                <text x="200" y="110" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Windows Portfolio OS</text>
+              </svg> -->
+              <img src="./assets/image/google analytics.png" alt="" width="117%">
+            </div>
+            <div class="project-content">
+              <!-- REPLACE: project 1 name & description -->
+              <h3 class="project-title">Google Analytics Dashboard Clone</h3>
+              <p class="project-desc">
+                A responsive analytics dashboard inspired by Google Analytics, featuring data visualization,performance metrics,charts,and sturctured reporting.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+              </div>
+              <div class="project-links">
+                <!-- REPLACE: real repo URL -->
+                <a href="https://github.com/EMMANUEL645-png/GOOGLE-ANALYTICS" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <!-- REPLACE: real live demo URL -->
+                <a href="https://emmanuel645-png.github.io/GOOGLE-ANALYTICS/" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-img-box">
+              <!-- REPLACE: project 2 image thumbnail -->
+              <!-- <svg width="100%" height="100%" viewBox="0 0 400 200" style="background: linear-gradient(135deg, #2b1055, #0f051d);">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="rgba(217,70,239,0.2)" stroke="#d946ef" stroke-width="2"/>
+                <text x="200" y="110" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Dynamic E-Commerce Flow</text>
+              </svg> -->
+              <img src="./assets/image/opay.png" alt="" width="117%">
+            </div>
+            <div class="project-content">
+              <!-- REPLACE: project 2 details -->
+              <h3 class="project-title">Opay E-Commerce interface clone</h3>
+              <p class="project-desc">
+                A responsive fintech interface inspired by Opay,featuring a modern layout,intuitive navigation,service cards,and mobile-friendly design.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">UI Design</span>
+              </div>
+              <div class="project-links">
+                <!-- REPLACE: real repo URL -->
+                <a href="https://github.com/EMMANUEL645-png/OPAY-CLONE" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <!-- REPLACE: real live demo URL -->
+                <a href="https://emmanuel645-png.github.io/OPAY-CLONE/" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-img-box">
+              <!-- REPLACE: project 3 image thumbnail -->
+              <!-- <svg width="100%" height="100%" viewBox="0 0 400 200" style="background: linear-gradient(135deg, #093028, #0a192f);">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+                <text x="200" y="110" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Analytics Dashboard Design</text>
+              </svg> -->
+              <img src="./assets/image/palmpay.png" alt="" width="117%">
+            </div>
+            <div class="project-content">
+              <!-- REPLACE: project 3 details -->
+              <h3 class="project-title">Palmpay Banking Interface Clone</h3>
+              <p class="project-desc">
+                A modern fintech dashboard inspired by Palmpay,designed with clean layouts,service section,promotional elements,and responsive styling.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">Flexbox</span>
+                <span class="tag">CSS Variables</span>
+                <span class="tag">Dashboard</span>
+              </div>
+              <div class="project-links">
+                <!-- REPLACE: real repo URL -->
+                <a href="https://github.com/EMMANUEL645-png/PALMPAY-CLONE" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <!-- REPLACE: real live demo URL -->
+                <a href="https://emmanuel645-png.github.io/PALMPAY-CLONE/" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+           <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-img-box">
+              <!-- REPLACE: project 3 image thumbnail -->
+              <!-- <svg width="100%" height="100%" viewBox="0 0 400 200" style="background: linear-gradient(135deg, #093028, #0a192f);">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+                <text x="200" y="110" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Analytics Dashboard Design</text>
+              </svg> -->
+              <img src="./assets/image/printivo.png" alt="" width="117%">
+            </div>
+            <div class="project-content">
+              <!-- REPLACE: project 3 details -->
+              <h3 class="project-title">Printivo Website Clone</h3>
+              <p class="project-desc">
+                A clean ptinting service interface inspired by Printivo,featuring product showcases,pricing sections,promotional content, and responsive layouts.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">Flexbox</span>
+                <span class="tag">CSS Variables</span>
+                <span class="tag">Dashboard</span>
+              </div>
+              <div class="project-links">
+                <!-- REPLACE: real repo URL -->
+                <a href="https://github.com/EMMANUEL645-png/PRINTIVO-CLONE" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <!-- REPLACE: real live demo URL -->
+                <a href="https://emmanuel645-png.github.io/PRINTIVO-CLONE/" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+           <!-- Project 5 -->
+          <article class="project-card">
+            <div class="project-img-box">
+              <!-- REPLACE: project 3 image thumbnail -->
+              <!-- <svg width="100%" height="100%" viewBox="0 0 400 200" style="background: linear-gradient(135deg, #093028, #0a192f);">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+                <text x="200" y="110" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Analytics Dashboard Design</text>
+              </svg> -->
+              <img src="./assets/image/she leads africa.png" alt="" width="117%">
+            </div>
+            <div class="project-content">
+              <!-- REPLACE: project 3 details -->
+              <h3 class="project-title">She Leads Africa Website Clone</h3>
+              <p class="project-desc">
+                Business and community platform featuring articles,events,resources,and a clean responsive design.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">CSS Variables</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <!-- REPLACE: real repo URL -->
+                <a href="https://github.com/EMMANUEL645-png/SHE-LEADS-AFRICA-CLONE" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <!-- REPLACE: real live demo URL -->
+                <a href="https://emmanuel645-png.github.io/SHE-LEADS-AFRICA-CLONE/" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+           <!-- Project 6 -->
+          <article class="project-card">
+            <div class="project-img-box">
+              <!-- REPLACE: project 3 image thumbnail -->
+              <!-- <svg width="100%" height="100%" viewBox="0 0 400 200" style="background: linear-gradient(135deg, #093028, #0a192f);">
+                <rect x="20" y="20" width="360" height="160" rx="8" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/>
+                <text x="200" y="110" fill="#FFFFFF" font-size="18" font-weight="bold" text-anchor="middle">Analytics Dashboard Design</text>
+              </svg> -->
+              <img src="./assets/image/web dev.png" alt="" width="117%">
+            </div>
+            <div class="project-content">
+              <!-- REPLACE: project 3 details -->
+              <h3 class="project-title">Web Development Platform Clone</h3>
+              <p class="project-desc">
+               A modern wed development interface featuring structured content,clean navigation,responsive layouts.
+              </p>
+              <div class="tech-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">Flexbox</span>
+                <span class="tag">CSS Variables</span>
+                <span class="tag">Dashboard</span>
+              </div>
+              <div class="project-links">
+                <!-- REPLACE: real repo URL -->
+                <a href="https://github.com/EMMANUEL645-png/WEB-DEV-CLONE" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <!-- REPLACE: real live demo URL -->
+                <a href="https://emmanuel645-png.github.io/WEB-DEV-CLONE/" target="_blank" rel="noopener" class="project-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         WINDOW 3: SKILLS (`#skills`)
+         ========================================================================== -->
+    <section class="window" id="skills" aria-label="Skills Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#107C41"/><path d="M16 24L22 30L32 18" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="titlebar-text">Skills & Technologies</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#skills" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body">
+        
+        <div class="skills-container">
+          
+          <!-- Category 1: Frontend Technologies -->
+          <div>
+            <h3 class="skills-category-title">Core Web Technologies</h3>
+            <div class="skills-grid">
+              
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <div>
+                  <div class="skill-name">HTML5</div>
+                  <div class="skill-level">Advanced / Semantic</div>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="skill-name">CSS3</div>
+                  <div class="skill-level">Expert / Flex & Grid</div>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div>
+                  <div class="skill-name">Bootstrap</div>
+                  <div class="skill-level">UI Development</div>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <div>
+                  <div class="skill-name">Responsive Design</div>
+                  <div class="skill-level">Mobile-First</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 2: Tools & Workflow -->
+          <div>
+            <h3 class="skills-category-title">Development & Tooling</h3>
+            <div class="skills-grid">
+              
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+                </div>
+                <div>
+                  <div class="skill-name">Git</div>
+                  <div class="skill-level">Version Control</div>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div>
+                  <div class="skill-name">GitHub</div>
+                  <div class="skill-level">CI/CD & Collaboration</div>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div>
+                  <div class="skill-name">Web Performance</div>
+                  <div class="skill-level">Optimization / CWV</div>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div>
+                  <div class="skill-name">Glassmorphism UI</div>
+                  <div class="skill-level">Modern CSS Design</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         WINDOW 4: RESUME (`#resume`)
+         ========================================================================== -->
+    <section class="window" id="resume" aria-label="Resume Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><path d="M12 6C9.79 6 8 7.79 8 10V38C8 40.21 9.79 42 12 42H36C38.21 42 40 40.21 40 38V18L28 6H12Z" fill="#D83B01"/><path d="M28 6V18H40" fill="#F8682C"/></svg>
+          <span class="titlebar-text">Resume Document Viewer</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#resume" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body">
+        
+        <div class="resume-toolbar">
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Curriculum Vitae — Asekhame Emmanuel</span>
+          
+          <!-- REPLACE: real resume PDF download path -->
+          <a href="assets/cv/resume.pdf" download="Emmanuel_Asekhame_Resume.pdf" class="download-cv-btn" id="download-cv-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download CV (PDF)</span>
+          </a>
+        </div>
+
+        <div class="resume-paper">
+          
+          <div class="resume-header">
+            <!-- REPLACE: name & contact -->
+            <h2 class="resume-name">Asekhame Emmanuel</h2>
+            <div class="resume-title-sub">Web Developer & Frontend Specialist</div>
+            <div class="resume-contact-inline">
+              <span>📧 emmanuelasekhame64@gmail.com</span>
+              <span>📱 +234 704 825 6057 </span>
+              <span>📍 Abuja, Nigeria</span>
+              <a href="https://github.com/EMMANUEL645-png">🌐 https://github.com/EMMANUEL645-png</a>
+            </div>
+          </div>
+
+          <!-- Section: Executive Profile -->
+          <h3 class="resume-section-head">Professional Summary</h3>
+          <!-- REPLACE: real profile summary -->
+          <p class="about-text">
+            Results-oriented Web Developer specializing in accessible, responsive web application interfaces. Experienced in modern CSS architectures, HTML5 semantic structure, web accessibility, and high-performance design patterns.
+          </p>
+
+          <!-- Section: Experience -->
+          <h3 class="resume-section-head">Work Experience</h3>
+          <!-- REPLACE: real work history -->
+          <div style="margin-bottom: 16px;">
+            <div style="display:flex; justify-content:space-between; font-weight:600;">
+              <span>Frontend Web Developer — Freelance / Projects</span>
+              <span style="color: var(--text-muted); font-size: 0.85rem;">2025 – Present</span>
+            </div>
+            <ul style="padding-left: 20px; font-size: 0.88rem; color: var(--text-muted); margin-top: 6px;">
+              <li>Engineered custom Web interfaces utilizing HTML5, CSS3 Grid/Flexbox, and responsive architecture.</li>
+              <li>Architected pure CSS component systems achieving optimal Lighthouse performance scores.</li>
+            </ul>
+          </div>
+
+          <!-- Section: Education -->
+          <h3 class="resume-section-head">Education</h3>
+          <!-- REPLACE: education details -->
+          <div style="display:flex; justify-content:space-between; font-weight:600;">
+            <span>Bachelor of Science in Computer Science</span>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Expected 2028</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         WINDOW 5: CONTACT (`#contact`)
+         ========================================================================== -->
+    <section class="window" id="contact" aria-label="Contact Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4" fill="#008272"/><path d="M8 12L24 26L40 12" stroke="#FFF" stroke-width="3"/></svg>
+          <span class="titlebar-text">Contact - Get In Touch</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#contact" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body">
+        
+        <div class="contact-layout">
+          
+          <!-- Contact Direct Details -->
+          <div class="contact-info-panel">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">Let's Connect</h3>
+            <p class="about-text" style="margin-bottom: 12px;">
+              Have a project in mind or want to collaborate? Feel free to reach out via form or direct channel.
+            </p>
+
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Email</div>
+                <!-- REPLACE: real email -->
+                <a href="mailto:emmanuelasekhame64@gmail.com" style="font-weight: 600;">emmanuelasekhame64@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Phone</div>
+                <!-- REPLACE: real phone number -->
+                <span style="font-weight: 600;">+234 704 825 6057 </span>
+              </div>
+            </div>
+
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Location</div>
+                <!-- REPLACE: real location -->
+                <span style="font-weight: 600;">Abuja, Nigeria</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- HTML5 Validated Form -->
+          <form class="contact-form" action="#" method="GET">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name *</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Jane Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Your Email *</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. jane@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity">
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message *</label>
+              <textarea id="contact-message" name="message" rows="4" class="form-textarea" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Send Message</button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         WINDOW 6: FILE EXPLORER (`#explorer`)
+         ========================================================================== -->
+    <section class="window" id="explorer" aria-label="File Explorer Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+          <span class="titlebar-text">File Explorer - Portfolio Directory</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#explorer" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body" style="padding: 0;">
+        
+        <div class="explorer-window-layout">
+          
+          <!-- Sidebar -->
+          <nav class="explorer-sidebar" aria-label="Explorer Quick Access">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px;">Quick Access</span>
+            <a href="#about" class="sidebar-nav-item">📁 About Me</a>
+            <a href="#projects" class="sidebar-nav-item">📁 Projects</a>
+            <a href="#skills" class="sidebar-nav-item">📁 Skills</a>
+            <a href="#resume" class="sidebar-nav-item">📁 Resume</a>
+            <a href="#contact" class="sidebar-nav-item">📁 Contact</a>
+            <a href="#personalize" class="sidebar-nav-item">🎨 Personalize</a>
+          </nav>
+
+          <!-- Main Directory View -->
+          <main class="explorer-main">
+            <div class="explorer-path-bar">
+              <span>C:\Users\Emmanuel\Portfolio</span>
+            </div>
+
+            <div class="explorer-files-grid">
+              
+              <a href="#about" class="file-item">
+                <svg class="file-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+                <span class="file-name">📁 About Me</span>
+              </a>
+
+              <a href="#projects" class="file-item">
+                <svg class="file-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+                <span class="file-name">📁 Projects</span>
+              </a>
+
+              <a href="#skills" class="file-item">
+                <svg class="file-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+                <span class="file-name">📁 Skills</span>
+              </a>
+
+              <a href="#resume" class="file-item">
+                <svg class="file-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+                <span class="file-name">📁 Resume</span>
+              </a>
+
+              <a href="#contact" class="file-item">
+                <svg class="file-icon" viewBox="0 0 48 48"><path d="M40 12H24L20 8H8C5.79 8 4 9.79 4 12V36C4 38.21 5.79 40 8 40H40C42.21 40 44 38.21 44 36V16C44 13.79 42.21 12 40 12Z" fill="#FFA000"/><path d="M40 16H8V36H40V16Z" fill="#FFCA28"/></svg>
+                <span class="file-name">📁 Contact</span>
+              </a>
+
+              <a href="#about" class="file-item">
+                <svg class="file-icon" viewBox="0 0 48 48"><path d="M12 6C9.79 6 8 7.79 8 10V38C8 40.21 9.79 42 12 42H36C38.21 42 40 40.21 40 38V18L28 6H12Z" fill="#9CA3AF"/><path d="M28 6V18H40" fill="#D1D5DB"/></svg>
+                <span class="file-name">📄 README.txt</span>
+              </a>
+
+            </div>
+          </main>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         WINDOW 7: PERSONALIZE PANEL (`#personalize`)
+         ========================================================================== -->
+    <section class="window" id="personalize" aria-label="Personalization Window">
+      
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-info">
+          <svg class="titlebar-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#881798"/><circle cx="18" cy="18" r="4" fill="#FFF"/><circle cx="30" cy="18" r="4" fill="#FFF"/><circle cx="24" cy="30" r="4" fill="#FFF"/></svg>
+          <span class="titlebar-text">Personalization & Settings</span>
+        </div>
+        <div class="window-controls">
+          <a href="#desktop" class="win-btn win-min" title="Minimize">─</a>
+          <a href="#personalize" class="win-btn win-max" title="Maximize">☐</a>
+          <a href="#desktop" class="win-btn win-close" title="Close">✕</a>
+        </div>
+      </div>
+
+      <!-- Window Body Content -->
+      <div class="window-body">
+        
+        <div class="personalize-section">
+          
+          <!-- Color Theme Selection -->
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Choose Color Mode</h3>
+            <div class="swatch-group">
+              <label for="theme-dark" class="theme-swatch-label">
+                <div style="width: 48px; height: 32px; background: #0d111a; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2);"></div>
+                <span style="font-size: 0.85rem; font-weight: 600;">Windows Dark</span>
+              </label>
+
+              <label for="theme-light" class="theme-swatch-label">
+                <div style="width: 48px; height: 32px; background: #f3f4f6; border-radius: 6px; border: 1px solid rgba(0,0,0,0.2);"></div>
+                <span style="font-size: 0.85rem; font-weight: 600;">Windows Light</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Wallpaper Selection -->
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;">Choose Desktop Background Wallpaper</h3>
+            <div class="swatch-group">
+              <label for="wp-default" class="wp-swatch-label">
+                <div style="width: 80px; height: 48px; background: radial-gradient(circle, #1e2638, #06080d); border-radius: 6px;"></div>
+                <span style="font-size: 0.82rem; font-weight: 600;">Windows Classic</span>
+              </label>
+
+              <label for="wp-neon" class="wp-swatch-label">
+                <div style="width: 80px; height: 48px; background: radial-gradient(circle, #2e0854, #050014); border-radius: 6px;"></div>
+                <span style="font-size: 0.82rem; font-weight: 600;">Cyber Neon</span>
+              </label>
+
+              <label for="wp-nature" class="wp-swatch-label">
+                <div style="width: 80px; height: 48px; background: linear-gradient(135deg, #093028, #050d1a); border-radius: 6px;"></div>
+                <span style="font-size: 0.82rem; font-weight: 600;">Nature Aurora</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emmanuel Asekhame - Web Developer Portfolio Lock Screen. Windows-inspired HTML5/CSS3 experience.">
+  <title>Welcome - Asekhame Emmanuel Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lock-screen-body">
+
+  <!-- Pure CSS Loading Screen (Appears before Lock Screen) -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="win-spinner" aria-label="Loading spinner">
+        <div class="win-dot"></div>
+        <div class="win-dot"></div>
+        <div class="win-dot"></div>
+        <div class="win-dot"></div>
+        <div class="win-dot"></div>
+      </div>
+      <p class="loading-text">Preparing your desktop...</p>
+    </div>
+  </div>
+
+  <!-- Lock Screen Card Container -->
+  <main class="lock-card" id="lock-card">
+    
+    <!-- Static Digital Clock & Date -->
+    <div class="lock-clock-time" id="lock-time">10:45 AM</div>
+    <div class="lock-clock-date" id="lock-date">Friday, August 14</div>
+
+    <!-- Developer Profile Photo -->
+    <div class="avatar-wrapper">
+      <!-- REPLACE: your real profile photo path here (e.g. assets/images/avatar.jpg) -->
+      <svg class="avatar-img" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Emmanuel Asekhame Profile Photo">
+        <circle cx="50" cy="50" r="50" fill="#106ebe"/>
+        <circle cx="50" cy="38" r="18" fill="#ffffff" opacity="0.9"/>
+        <path d="M 22 82 C 22 62, 35 55, 50 55 C 65 55, 78 62, 78 82 Z" fill="#ffffff" opacity="0.9"/>
+      </svg>
+    </div>
+
+    <!-- Welcome Headings & Bio Info -->
+    <div class="lock-heading">Welcome</div>
+    <h1 class="lock-name">Asekhame Emmanuel</h1>
+    <p class="lock-role">Web Developer</p>
+
+    <!-- Enter Desktop Button -->
+    <a href="window.html" class="enter-btn" id="enter-portfolio-btn">
+      <span>Enter Portfolio</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+
+  </main>
+
+</body>
+</html>
